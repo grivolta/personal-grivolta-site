@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio professionale e biglietto da visita digitale." />
+  <title>Portfolio Professionale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" data-field="brandName">Giorgio Rivolta</a>
+    <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Navigazione principale">
+      <a href="#about">Profilo</a>
+      <a href="#services">Competenze</a>
+      <a href="#resume">CV</a>
+      <a href="#projects">Progetti</a>
+      <a href="#contact">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-field="heroEyebrow">Project Manager</p>
+        <h1 data-field="heroTitle">Guido progetti complessi trasformando obiettivi, persone e vincoli in risultati misurabili.</h1>
+        <p class="hero-text" data-field="heroText">Biglietto da visita digitale personalizzabile per raccontare esperienza, competenze, metodo e casi di successo.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Contattami</a>
+          <a class="btn secondary" href="#resume">Vedi CV</a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <img id="profileImage" src="assets/img/profile.svg" alt="Foto profilo" />
+        <div>
+          <strong data-field="heroCardTitle">Disponibile per nuove opportunità</strong>
+          <span data-field="heroCardSubtitle">Project, Program & Operations Management</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section split">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Profilo</p>
+        <h2 data-field="aboutTitle">Un approccio pragmatico alla gestione dei progetti.</h2>
+      </div>
+      <div class="content-card reveal">
+        <p data-field="aboutText">Aiuto team e stakeholder a passare dalla strategia all’esecuzione con chiarezza, governance e ritmo operativo.</p>
+        <div class="stats" id="stats"></div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="section-heading center reveal">
+        <p class="eyebrow">Competenze</p>
+        <h2 data-field="servicesTitle">Cosa posso portare al tuo team</h2>
+      </div>
+      <div class="grid cards" id="servicesGrid"></div>
+    </section>
+
+    <section id="resume" class="section resume-section">
+      <div class="section-heading center reveal">
+        <p class="eyebrow">Resume</p>
+        <h2 data-field="resumeTitle">Esperienza e formazione</h2>
+      </div>
+      <div class="resume-layout">
+        <div>
+          <h3>Esperienza</h3>
+          <div class="timeline" id="experienceList"></div>
+        </div>
+        <div>
+          <h3>Formazione / Certificazioni</h3>
+          <div class="timeline" id="educationList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading center reveal">
+        <p class="eyebrow">Progetti</p>
+        <h2 data-field="projectsTitle">Esempi di impatto</h2>
+      </div>
+      <div class="grid project-grid" id="projectsGrid"></div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-card reveal">
+        <p class="eyebrow">Contatti</p>
+        <h2 data-field="contactTitle">Parliamo del prossimo progetto.</h2>
+        <p data-field="contactText">Scrivimi per collaborazioni, opportunità professionali o una conversazione esplorativa.</p>
+        <div class="contact-links" id="contactLinks"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span data-field="footerText">© 2026 Giorgio Rivolta. Tutti i diritti riservati.</span>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
