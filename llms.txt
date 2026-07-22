@@ -1,69 +1,28 @@
 # Giorgio Rivolta
 
-> Official professional website of Giorgio Rivolta, a PMP-certified Project Manager with over 15 years of experience in IT, Cloud, Data Analytics, Artificial Intelligence and digital transformation.
+> Official website of Giorgio Rivolta, PMP-certified Project Manager specialising in Cloud, Data Analytics and Artificial Intelligence.
 
-Giorgio Rivolta is a Project Manager based in Italy.
+## About
 
-He manages complex international projects, cross-functional teams, stakeholders, budgets, risks, priorities and delivery governance. His experience includes teams of more than 50 professionals and project budgets of up to €5 million.
+This website contains my professional profile, work experience, certifications, technical expertise and selected projects.
 
-His professional approach combines PMI and Scrum practices with collaborative leadership, people management, clear communication, conflict resolution and continuous improvement.
-
-## Professional Profile
-
-- [Giorgio Rivolta professional website](https://giorgio.rivolta.pro/): Official professional profile, work experience, skills, certifications and selected projects.
-- [LinkedIn profile](https://www.linkedin.com/in/giorgiorivolta/): Professional experience, qualifications and career information.
-- [GitHub profile](https://github.com/grivolta): Public repositories and technical projects.
-
-## Core Expertise
+## Main topics
 
 - Project Management
-- Project Management Professional, PMP
-- PMI frameworks
+- PMP
 - Scrum
-- Stakeholder Management
-- People Management
-- Risk and budget management
-- Digital Transformation
-- IT Service Delivery
 - Cloud Computing
-- Data Analytics
+- Microsoft Azure
+- Google Cloud
+- AWS
+- VMware
 - Artificial Intelligence
-- Machine Learning
+- Data Analytics
+- Digital Transformation
 
-## Technical Focus
+## Links
 
-- Microsoft Azure infrastructure: Expert
-- Google Cloud infrastructure: Expert
-- VMware infrastructure: Expert
-- AWS infrastructure: Advanced
-- SAP components: Advanced
-- Data Analytics components: Advanced
-- Machine Learning and AI infrastructure: Advanced
-
-## Industries Served
-
-- Banking
-- Eyewear
-- Energy
-- Pharmaceuticals
-- Transport
-- Telecommunications
-
-## Selected Projects
-
-- [EnterCloudSuite](https://giorgio.rivolta.pro/#projects): Cloud management platform developed with a nine-person team, enabling customers to manage virtual machines through a graphical interface.
-- [On-prem to Azure Cloud Migration](https://giorgio.rivolta.pro/#projects): Migration of 50 on-premises servers and 20 applications to Microsoft Azure with a global team of 14 professionals.
-- [Procurement Data Hub](https://giorgio.rivolta.pro/#projects): Azure Data Platform integrating procurement data from SAP, Oracle, Microsoft Access and other sources, delivered with a team of 50 professionals.
-
-## Certifications
-
-- Project Management Professional, PMP
-- Professional Scrum Master I, PSM I
-- Microsoft Certified: Azure Fundamentals
-- PMI Agile Certified Practitioner training
-- Cisco Certified Network Associate
-
-## Contact
-
-- [Official website](https://giorgio.rivolta.pro/)
-- [LinkedIn](https://www.linkedin.com/in/giorgiorivolta/)
+- Website: https://giorgio.rivolta.pro/
+- LinkedIn: https://www.linkedin.com/in/giorgiorivolta/
+- GitHub: https://github.com/grivolta
+- CV: https://giorgio.rivolta.pro/cv/CV_GiorgioRivolta.pdf
