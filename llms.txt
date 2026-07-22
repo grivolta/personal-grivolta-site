@@ -1,0 +1,53 @@
+# Giorgio Rivolta
+
+> Professional website of Giorgio Rivolta, PMP-certified Project Manager specialising in IT, Cloud, Data Analytics, Artificial Intelligence and digital transformation.
+
+## Professional profile
+
+Giorgio Rivolta is a Project Manager based in Italy with over 15 years of experience.
+
+He manages complex international projects, stakeholders, budgets, risks and cross-functional teams of up to 50+ people.
+
+## Core expertise
+
+- Project Management
+- PMP and PMI frameworks
+- Scrum
+- Stakeholder Management
+- People Management
+- Microsoft Azure
+- Google Cloud
+- AWS
+- VMware
+- SAP
+- Data Analytics
+- Artificial Intelligence
+- Machine Learning
+- Digital Transformation
+
+## Industries
+
+- Banking
+- Eyewear
+- Energy
+- Pharmaceuticals
+- Transport
+- Telecommunications
+
+## Selected projects
+
+- EnterCloudSuite
+- On-prem to Azure Cloud Migration
+- Procurement Data Hub
+
+## Certifications
+
+- Project Management Professional, PMP
+- Professional Scrum Master I, PSM I
+- Microsoft Certified: Azure Fundamentals
+
+## Official links
+
+- Website: https://giorgio.rivolta.pro/
+- LinkedIn: https://www.linkedin.com/in/giorgiorivolta/
+- GitHub: https://github.com/grivolta
