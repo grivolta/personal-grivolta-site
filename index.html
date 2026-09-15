@@ -186,7 +186,7 @@
     position:relative;overflow:hidden;padding-block:7rem 11rem;
   }
   .hero .wrap{
-    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,17rem);
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,11rem);
     gap:var(--gap);align-items:end;position:relative;z-index:3;width:100%;
   }
   .kicker{
@@ -195,22 +195,19 @@
   }
   .kicker span{color:rgba(255,255,255,.55)}
   .hero h1{
-    font-size:clamp(2.9rem,8.4vw,6.6rem);font-weight:600;max-width:15ch;margin-bottom:1.8rem;
+    font-size:clamp(2.1rem,5.6vw,4.3rem);font-weight:600;max-width:16ch;margin-bottom:1.6rem;
   }
   .hero h1 em{font-style:italic;font-weight:400;color:var(--gold)}
-  .hero-lede{
-    font-size:clamp(1.05rem,1rem + .5vw,1.3rem);max-width:50ch;
-    color:rgba(255,255,255,.72);margin:0 0 2.4rem;
+  .hero-note{
+    font-family:var(--mono);font-size:.76rem;line-height:1.7;letter-spacing:.01em;max-width:46ch;
+    color:rgba(255,255,255,.55);margin:0 0 2.2rem;padding-left:1rem;border-left:2px solid var(--gold);
   }
-  .hero-lede strong{color:#fff;font-weight:500}
+  .hero-note strong{color:rgba(255,255,255,.85);font-weight:500}
 
-  .portrait{position:relative;width:100%;max-width:17rem;margin-left:auto}
+  .portrait{position:relative;width:100%;max-width:11rem;margin-left:auto}
   .portrait img{
-    width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;
+    width:100%;height:auto;aspect-ratio:1/1;border-radius:50%;object-fit:cover;object-position:center 22%;
     position:relative;z-index:2;filter:saturate(.85) contrast(1.03);
-  }
-  .portrait::after{
-    content:"";position:absolute;inset:1rem -1rem -1rem 1rem;border:1px solid var(--gold);z-index:1;
   }
 
   .actions{display:flex;flex-wrap:wrap;gap:.8rem}
@@ -273,6 +270,12 @@
   .row:hover::before,.row:focus-within::before{transform:scaleX(1)}
   .ledger-rows .row:nth-child(3n){border-right:0}
   .ledger-rows .row:nth-last-child(-n+3){border-bottom:0}
+  .row{color:var(--gold-ink)}
+  .row-icon{
+    display:flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;
+    border:1px solid var(--gold);border-radius:50%;margin-bottom:1.3rem;color:var(--gold-ink);
+  }
+  .row-icon svg{width:1.3rem;height:1.3rem}
   .row .fig{
     font-family:var(--display);font-size:clamp(2.4rem,5.4vw,3.8rem);font-weight:600;
     line-height:.95;letter-spacing:-.04em;display:block;margin-bottom:.6rem;font-variant-numeric:tabular-nums;
@@ -284,18 +287,6 @@
     opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease),transform .4s var(--ease);
   }
   .row:hover .ctx,.row:focus-within .ctx{opacity:.85;transform:none}
-  .row .tag{
-    font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
-    position:absolute;top:2.2rem;right:1.5rem;
-  }
-  .row[data-kind="work"]{color:var(--green)}
-  .row[data-kind="give"]{color:var(--gold-ink)}
-  .row .lbl{color:var(--muted)}
-  .ledger-foot{padding-top:1.1rem;font-size:.86rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;align-items:center}
-  .key{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase}
-  .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-  .dot-work{background:var(--green)}
-  .dot-give{background:var(--gold)}
 
   /* ---------- principles ---------- */
   .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(2.5rem,5vw,4.5rem)}
@@ -305,60 +296,19 @@
     position:absolute;top:-.8rem;left:0;background:var(--mist);padding-right:.8rem;
   }
   .principle h3{font-size:clamp(1.45rem,2.6vw,2rem);margin-bottom:.8rem}
-  .principle p{margin:0 0 1rem;color:var(--muted)}
-  .principle .thread{margin:0;padding-left:1.1rem;border-left:2px solid var(--gold);font-size:.95rem;color:var(--ink)}
+  .principle p{margin:0;color:var(--muted)}
 
-  /* ---------- work ---------- */
-  .projects{border-top:1px solid var(--line)}
-  .project{
-    display:grid;grid-template-columns:minmax(0,4rem) minmax(0,1fr) minmax(0,14rem);
-    gap:var(--gap);padding-block:clamp(2.2rem,4vw,3.4rem);border-bottom:1px solid var(--line);
-    align-items:start;position:relative;transition:background .4s var(--ease);
+  /* ---------- certification badges ---------- */
+  .badges{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(2rem,5vw,3rem)}
+  .badge{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6rem}
+  .badge .seal{
+    width:5.5rem;height:5.5rem;border-radius:50%;border:1px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:.4rem;
   }
-  .project::before{
-    content:"";position:absolute;left:calc(var(--pad) * -1);right:calc(var(--pad) * -1);top:0;bottom:0;
-    background:var(--mist);opacity:0;transition:opacity .4s var(--ease);z-index:0;
-  }
-  .project:hover::before{opacity:1}
-  .project > *{position:relative;z-index:1}
-  .project .idx{
-    font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:400;
-    color:var(--gold);line-height:1;font-variant-numeric:tabular-nums;
-  }
-  .project .yr{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.1em;display:block;margin-bottom:.6rem}
-  .project h3{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:.7rem}
-  .project p{margin:0;color:var(--muted);max-width:60ch}
-  .facts{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
-  .facts li{display:flex;justify-content:space-between;gap:1rem;padding:.5rem 0;border-bottom:1px solid var(--line)}
-  .facts li:last-child{border-bottom:0}
-  .facts b{color:var(--ink);font-weight:500;text-align:right}
-
-  /* ---------- path ---------- */
-  .path{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.18)}
-  .path li{
-    display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:var(--gap);
-    padding-block:1.6rem;border-bottom:1px solid rgba(255,255,255,.18);
-    transition:padding-left .4s var(--ease);
-  }
-  .path li:hover{padding-left:.8rem}
-  .path .yr{font-family:var(--mono);font-size:.74rem;color:var(--gold);letter-spacing:.08em}
-  .path .role{font-weight:700;display:block;color:#fff;font-size:1.05rem}
-  .path .org{color:rgba(255,255,255,.55);font-size:.92rem}
-
-  /* ---------- toolkit ---------- */
-  .two{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(2.5rem,5vw,4.5rem)}
-  .deflist{margin:0}
-  .deflist dt{
-    font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--gold-ink);padding-top:1.1rem;border-top:1px solid var(--line);margin-bottom:.45rem;
-  }
-  .deflist dt:first-of-type{border-top:0;padding-top:0}
-  .deflist dd{margin:0 0 1.2rem;color:var(--muted);font-size:.95rem}
-  .certs{list-style:none;margin:0;padding:0}
-  .certs li{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line);font-size:.96rem}
-  .certs li:last-child{border-bottom:0}
-  .certs .when{font-family:var(--mono);font-size:.72rem;color:var(--gold-ink);white-space:nowrap;padding-top:.25rem}
-  .certs .sub{color:var(--muted);font-size:.85rem}
+  .badge .seal::before{content:"";position:absolute;inset:6px;border:1px solid var(--gold);border-radius:50%;opacity:.5}
+  .badge .seal span{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--gold-ink);font-weight:500;position:relative;z-index:1}
+  .badge b{font-size:1rem;font-weight:600}
+  .badge .sub{font-family:var(--mono);font-size:.76rem;color:var(--muted)}
 
   /* ---------- contact ---------- */
   .contact h2{font-size:clamp(2.2rem,6vw,4.2rem);max-width:17ch;margin-bottom:1.4rem}
@@ -383,25 +333,18 @@
 
   @media (max-width:980px){
     .hero .wrap{grid-template-columns:1fr;align-items:start}
-    .portrait{max-width:12rem;margin-left:0;order:-1;margin-bottom:.5rem}
+    .portrait{max-width:7.5rem;margin-left:0;order:-1;margin-bottom:.5rem}
     .hero{padding-block:6rem 9rem;min-height:auto}
   }
   @media (max-width:860px){
     .navlinks{display:none}
     .burger{display:flex}
     .lang{margin-left:0}
-    .ledger-rows{grid-template-columns:repeat(2,1fr)}
-    .ledger-rows .row:nth-child(3n){border-right:1px solid var(--line)}
-    .ledger-rows .row:nth-child(2n){border-right:0}
-    .ledger-rows .row:nth-last-child(-n+3){border-bottom:1px solid var(--line)}
-    .ledger-rows .row:nth-last-child(-n+2){border-bottom:0}
-    .principles,.two{grid-template-columns:1fr}
-    .project{grid-template-columns:minmax(0,3rem) minmax(0,1fr);gap:1.2rem}
-    .project .facts{grid-column:2}
-    .path li{grid-template-columns:1fr;gap:.2rem}
+    .principles{grid-template-columns:1fr}
+    .badges{grid-template-columns:1fr}
     .row .ctx{opacity:.8;transform:none}
   }
-  @media (max-width:480px){
+  @media (max-width:700px){
     .ledger-rows{grid-template-columns:1fr}
     .ledger-rows .row{border-right:0!important;border-bottom:1px solid var(--line)!important}
     .ledger-rows .row:last-child{border-bottom:0!important}
@@ -424,10 +367,8 @@
   <div class="wrap">
     <a class="mark" href="#top">Giorgio Rivolta<span>.</span></a>
     <ul class="navlinks">
-      <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
-      <li><a href="#work" data-i18n="nav.work">Work</a></li>
-      <li><a href="#path" data-i18n="nav.path">Path</a></li>
-      <li><a href="#toolkit" data-i18n="nav.toolkit">Toolkit</a></li>
+      <li><a href="#principles" data-i18n="nav.principles">Principles</a></li>
+      <li><a href="#certs" data-i18n="nav.certs">Certifications</a></li>
       <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="lang" role="group" aria-label="Language / Lingua">
@@ -439,10 +380,8 @@
 </header>
 
 <nav class="sheet" id="sheet" aria-label="Menu">
-  <a href="#approach" data-i18n="nav.approach">Approach</a>
-  <a href="#work" data-i18n="nav.work">Work</a>
-  <a href="#path" data-i18n="nav.path">Path</a>
-  <a href="#toolkit" data-i18n="nav.toolkit">Toolkit</a>
+  <a href="#principles" data-i18n="nav.principles">Principles</a>
+  <a href="#certs" data-i18n="nav.certs">Certifications</a>
   <a href="#contact" data-i18n="nav.contact">Contact</a>
 </nav>
 
@@ -462,7 +401,7 @@
       <div>
         <p class="kicker">Project &amp; People Manager <span>/</span> PMP<sup>®</sup> <span>/</span> PSM I <span>/</span> <span data-i18n="hero.place">Cesano Maderno, Italy</span></p>
         <h1 data-i18n="hero.title">I run programmes that leave clients <em>value that lasts</em> — and leave things better than I found them.</h1>
-        <p class="hero-lede" data-i18n="hero.lede">Fifteen years turning business priorities into cloud, data and AI delivery for Fortune 500 organisations. <strong>The same care goes into the places I help clean up on weekends.</strong></p>
+        <p class="hero-note" data-i18n="hero.note">You'll find my CV below. <strong>The rest of this site is what fills my heart</strong> — and the rest of my free time.</p>
         <div class="actions">
           <a class="btn btn-gold" href="mailto:giorgiorivolta90@gmail.com"><span data-i18n="hero.cta1">Get in touch</span></a>
           <a class="btn btn-ghost" href="cv/CV_GiorgioRivolta.pdf" target="_blank" rel="noopener"><span data-i18n="hero.cta2">Download CV</span></a>
@@ -481,193 +420,87 @@
     <div class="wrap">
       <div class="ledger-head rv">
         <h2 data-i18n="ledger.title">In numbers</h2>
-        <p data-i18n="ledger.sub">What I keep count of, all in one place.</p>
+        <p data-i18n="ledger.sub">What I keep count of, outside the office.</p>
       </div>
       <div class="ledger-rows">
-        <div class="row rv" data-kind="work" tabindex="0">
-          <span class="tag" data-i18n="tag.work">Work</span>
-          <span class="fig" data-to="15" data-suffix="+">15+</span>
-          <span class="lbl" data-i18n="lg.1">years leading IT delivery</span>
-          <span class="ctx" data-i18n="cx.1">From network administrator to programme lead — the technical years still inform every estimate I sign off.</span>
-        </div>
-        <div class="row rv" data-d="1" data-kind="work" tabindex="0">
-          <span class="tag" data-i18n="tag.work">Work</span>
-          <span class="fig" data-to="50" data-suffix="+">50+</span>
-          <span class="lbl" data-i18n="lg.2">people in the project teams I coordinate</span>
-          <span class="ctx" data-i18n="cx.2">Fifteen of them report to me directly. The rest span engineering, analytics, suppliers and client teams.</span>
-        </div>
-        <div class="row rv" data-d="2" data-kind="work" tabindex="0">
-          <span class="tag" data-i18n="tag.work">Work</span>
-          <span class="fig" data-prefix="€" data-to="5" data-suffix="M">€5M</span>
-          <span class="lbl" data-i18n="lg.3">largest programme budget I've owned</span>
-          <span class="ctx" data-i18n="cx.3">Owned end to end: forecast, burn, supplier contracts and the conversations when a number moves.</span>
-        </div>
-        <div class="row rv" data-kind="give" tabindex="0">
-          <span class="tag" data-i18n="tag.give">Give</span>
+        <div class="row rv" tabindex="0">
+          <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20c8-1 14-7 15-15-8 1-14 7-15 15Z"/><path d="M6 18c3-4 7-8 11-11"/></svg></span>
           <span class="fig" data-to="100" data-suffix="+ kg">100+ kg</span>
           <span class="lbl" data-i18n="lg.4">of waste collected from natural areas</span>
-          <span class="ctx" data-i18n="cx.4">Weighed bag by bag, on clean-up days with Plasticfree. It's the metric I'm least willing to round up.</span>
+          <span class="ctx" data-i18n="cx.4">Taking that weight off the world is exactly what makes me feel lighter, every day.</span>
         </div>
-        <div class="row rv" data-d="1" data-kind="give" tabindex="0">
-          <span class="tag" data-i18n="tag.give">Give</span>
+        <div class="row rv" data-d="1" tabindex="0">
+          <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="12" r="6.5"/><circle cx="15" cy="12" r="6.5"/></svg></span>
           <span class="fig" data-to="2">2</span>
           <span class="lbl" data-i18n="lg.5">associations I volunteer with: PMI-NIC and Plasticfree</span>
-          <span class="ctx" data-i18n="cx.5">One passes on the craft of project management. The other picks up what other people left behind.</span>
+          <span class="ctx" data-i18n="cx.5">One passes on knowledge. The other picks up what other people left behind.</span>
         </div>
-        <div class="row rv" data-d="2" data-kind="give" tabindex="0">
-          <span class="tag" data-i18n="tag.give">Give</span>
+        <div class="row rv" data-d="2" tabindex="0">
+          <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.2 1.1 2.2h5c0-1 .5-1.7 1.1-2.2A6 6 0 0 0 12 3Z"/></svg></span>
           <span class="fig" data-to="1">1</span>
           <span class="lbl" data-i18n="lg.6">idea worth handing down: respect for people and for the planet</span>
           <span class="ctx" data-i18n="cx.6">The one thing I'd want the next generation to take from me, ahead of any method or certification.</span>
         </div>
       </div>
-      <div class="ledger-foot rv">
-        <span class="key"><i class="dot dot-work"></i><span data-i18n="key.work">Career</span></span>
-        <span class="key"><i class="dot dot-give"></i><span data-i18n="key.give">Community</span></span>
-        <span data-i18n="ledger.note">Same person, different units of measure.</span>
-      </div>
     </div>
   </section>
 
-  <div class="divider" data-morph="0.15" aria-hidden="true"></div>
+  <div class="divider" data-morph="0.2" aria-hidden="true"></div>
 
-  <!-- APPROACH -->
-  <section class="band mist" id="approach">
+  <!-- PRINCIPLES -->
+  <section class="band mist" id="principles">
     <div class="wrap">
-      <p class="eyebrow" data-i18n="eyebrow.approach">How I work</p>
-      <h2 class="h-sec rv" data-i18n="approach.title">Four principles that don't change, in the office or along a river.</h2>
-      <p class="lede rv" data-d="1" style="margin-bottom:3.5rem" data-i18n="approach.lede">Delivery discipline is the part that's easy to certify. What actually decides how a programme turns out looks a lot more like character.</p>
+      <p class="eyebrow" data-i18n="eyebrow.principles">My principles</p>
+      <h2 class="h-sec rv" data-i18n="principles.title">Four principles that don't change, whatever I'm doing.</h2>
+      <p class="lede rv" data-d="1" style="margin-bottom:3.5rem" data-i18n="principles.lede">Method can be learned and certified. What actually decides how something turns out looks a lot more like character.</p>
 
       <div class="principles">
         <div class="principle rv">
           <span class="num">01</span>
           <h3 data-i18n="p1.h">People before the plan</h3>
-          <p data-i18n="p1.p">I manage fifteen people directly and coordinate teams of fifty or more. A plan is worth exactly as much as the people who believe in it, so most of my time goes into coaching, clearing obstacles and defusing conflict early.</p>
-          <p class="thread" data-i18n="p1.t">A team that trusts you flags the risk while it's still small.</p>
+          <p data-i18n="p1.p">A plan is worth exactly as much as the people who believe in it. So most of my time goes into listening, clearing obstacles for the people around me, and defusing conflict while it's still small.</p>
         </div>
         <div class="principle rv" data-d="1">
           <span class="num">02</span>
           <h3 data-i18n="p2.h">Measure what matters</h3>
-          <p data-i18n="p2.p">Scope, budget, risk, dependencies — tracked in the open, reported honestly, escalated before they do damage. Leadership gets the real picture, not the comfortable one.</p>
-          <p class="thread" data-i18n="p2.t">It's the same instinct that makes me weigh the bags at the end of a clean-up.</p>
+          <p data-i18n="p2.p">What actually matters gets tracked in the open, talked about honestly, and raised before it turns into a real problem. The people around me get the real picture, not the comfortable one.</p>
         </div>
         <div class="principle rv" data-d="2">
           <span class="num">03</span>
           <h3 data-i18n="p3.h">Leave it better than you found it</h3>
-          <p data-i18n="p3.p">A migration should leave the platform more secure and more scalable than it was. A data hub should leave a company able to trust its own numbers. Delivery isn't over when it ships — it's over when it holds.</p>
-          <p class="thread" data-i18n="p3.t">With Plasticfree, that sentence needs no translation.</p>
+          <p data-i18n="p3.p">Whatever I touch — a place, a relationship, an effort — should be left better than I found it. It isn't finished when it looks done: it's finished when it holds up over time.</p>
         </div>
         <div class="principle rv" data-d="3">
           <span class="num">04</span>
           <h3 data-i18n="p4.h">Hand it on</h3>
-          <p data-i18n="p4.p">I volunteer with the PMI Northern Italy Chapter because project management is a craft to be shared, not guarded. And I want the next generation to grow up taking people and the environment equally seriously.</p>
-          <p class="thread" data-i18n="p4.t">What you keep to yourself stops with you.</p>
+          <p data-i18n="p4.p">I volunteer with the PMI Northern Italy Chapter because knowledge is a craft to be shared, not guarded. And I want the next generation — starting with my own daughter — to grow up taking people and the environment equally seriously.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="divider" data-morph="0.45" aria-hidden="true"></div>
+  <div class="divider" data-morph="0.6" aria-hidden="true"></div>
 
-  <!-- WORK -->
-  <section class="band" id="work">
+  <!-- CERTIFICATIONS -->
+  <section class="band" id="certs">
     <div class="wrap">
-      <p class="eyebrow" data-i18n="eyebrow.work">Selected programmes</p>
-      <h2 class="h-sec rv" style="margin-bottom:2.8rem" data-i18n="work.title">Three programmes that changed how a business runs.</h2>
-
-      <div class="projects">
-        <article class="project rv">
-          <div class="idx">01</div>
-          <div>
-            <span class="yr">2021 — 2026</span>
-            <h3 data-i18n="w1.h">Procurement Data Hub</h3>
-            <p data-i18n="w1.p">From assessment through to deployment of a unified Azure data platform pulling together SAP, Oracle, Microsoft Access and other sources. It gave an energy group a single source of truth for procurement — and with it, reporting people could actually act on. I coordinated infrastructure, engineering, analytics and business stakeholders throughout.</p>
-          </div>
-          <ul class="facts">
-            <li><span data-i18n="f.sector">Sector</span><b data-i18n="w1.sector">Energy</b></li>
-            <li><span data-i18n="f.team">Team</span><b>50</b></li>
-            <li><span data-i18n="f.budget">Budget</span><b>€2M — €5M</b></li>
-          </ul>
-        </article>
-
-        <article class="project rv">
-          <div class="idx">02</div>
-          <div>
-            <span class="yr">2019 — 2021</span>
-            <h3 data-i18n="w2.h">On-premises to Azure migration</h3>
-            <p data-i18n="w2.p">Fifty servers and twenty applications moved to Microsoft Azure without interrupting the business. Functional assessment, target architecture, sequencing and risk mitigation — with engineers, architects and stakeholders spread across regions kept aligned by structured governance and plain-spoken updates to leadership.</p>
-          </div>
-          <ul class="facts">
-            <li><span data-i18n="f.sector">Sector</span><b data-i18n="w2.sector">Eyewear</b></li>
-            <li><span data-i18n="f.team">Team</span><b data-i18n="w2.team">14 (global)</b></li>
-            <li><span data-i18n="f.budget">Budget</span><b>€1M — €2M</b></li>
-          </ul>
-        </article>
-
-        <article class="project rv">
-          <div class="idx">03</div>
-          <div>
-            <span class="yr">2015 — 2019</span>
-            <h3 data-i18n="w3.h">EnterCloudSuite</h3>
-            <p data-i18n="w3.p">End-to-end delivery of a self-service cloud management platform, bringing developers, UI/UX designers and infrastructure engineers into one rhythm. I introduced agile ways of working and owned scope, milestones, budget and communication with leadership. It widened the company's offering and put customers in control of their own infrastructure.</p>
-          </div>
-          <ul class="facts">
-            <li><span data-i18n="f.sector">Sector</span><b data-i18n="w3.sector">Cloud services</b></li>
-            <li><span data-i18n="f.team">Team</span><b>9</b></li>
-            <li><span data-i18n="f.budget">Budget</span><b data-i18n="w3.budget">up to €1M</b></li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider" data-morph="0.75" aria-hidden="true"></div>
-
-  <!-- PATH -->
-  <section class="band inverse" id="path">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="eyebrow.path">The path here</p>
-      <h2 class="h-sec rv" style="margin-bottom:2.8rem" data-i18n="path.title">From fixing networks to leading programmes.</h2>
-      <ul class="path">
-        <li class="rv"><span class="yr">2021 — <span data-i18n="now">now</span></span><span><span class="role" data-i18n="pa1.r">Project &amp; People Manager, IT &amp; AI</span><span class="org">Avvale S.p.A.</span></span></li>
-        <li class="rv" data-d="1"><span class="yr">2019 — 2021</span><span><span class="role" data-i18n="pa2.r">Client Project Manager</span><span class="org">NTT DATA S.p.A.</span></span></li>
-        <li class="rv" data-d="2"><span class="yr">2015 — 2019</span><span><span class="role" data-i18n="pa3.r">Cloud Delivery Manager &amp; Scrum Master</span><span class="org">Irideos S.p.A.</span></span></li>
-        <li class="rv" data-d="3"><span class="yr">2013 — 2015</span><span><span class="role" data-i18n="pa4.r">Support Team Manager</span><span class="org">Enter S.r.l.</span></span></li>
-        <li class="rv" data-d="4"><span class="yr">2011 — 2013</span><span><span class="role" data-i18n="pa5.r">Network Administrator</span><span class="org">Enter S.r.l.</span></span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- TOOLKIT -->
-  <section class="band" id="toolkit">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="eyebrow.toolkit">Toolkit &amp; credentials</p>
-      <div class="two">
-        <div class="rv">
-          <dl class="deflist">
-            <dt data-i18n="t1.dt">Data &amp; analytics</dt>
-            <dd>Azure Data Factory · Azure Data Lake · Databricks · Power BI · Power Apps</dd>
-            <dt data-i18n="t2.dt">AI &amp; machine learning</dt>
-            <dd>Azure AI &amp; Bot Service · Azure Machine Learning · Databricks ML · AWS SageMaker</dd>
-            <dt data-i18n="t3.dt">Cloud &amp; platforms</dt>
-            <dd>Azure · AWS · Google Cloud · VMware · OpenStack · Kubernetes</dd>
-            <dt data-i18n="t4.dt">Delivery</dt>
-            <dd>Scrum · PMI · PRINCE2 · Jira · Azure DevOps · Asana · Trello</dd>
-            <dt data-i18n="t5.dt">Industries</dt>
-            <dd data-i18n="t5.dd">Banking · Consumer manufacturing · Energy &amp; utilities · Healthcare · Insurance · Media · Pharmaceuticals · Transport · Telecommunications</dd>
-            <dt data-i18n="t6.dt">Languages</dt>
-            <dd data-i18n="t6.dd">Italian (native) · English (B2)</dd>
-          </dl>
+      <p class="eyebrow" data-i18n="eyebrow.certs">Credentials</p>
+      <h2 class="h-sec rv" style="margin-bottom:2.8rem" data-i18n="certs.title">The certifications I'm proud of.</h2>
+      <div class="badges">
+        <div class="badge rv">
+          <div class="seal" aria-hidden="true"><span>PMP</span></div>
+          <b data-i18n="badge1.n">Project Management Professional</b>
+          <span class="sub">PMI · <span data-i18n="c.id">ID</span> 4438819</span>
         </div>
-        <div class="rv" data-d="1">
-          <ul class="certs">
-            <li><span><b data-i18n="c1.n">Project Management Professional (PMP)</b><br><span class="sub">PMI · <span data-i18n="c.id">ID</span> 4438819</span></span><span class="when">2026</span></li>
-            <li><span><b data-i18n="c2.n">Professional Scrum Master I</b><br><span class="sub">Scrum.org · <span data-i18n="c.id">ID</span> 994831</span></span><span class="when">2023</span></li>
-            <li><span><b data-i18n="c3.n">Microsoft Certified: Azure Fundamentals</b><br><span class="sub">Microsoft · <span data-i18n="c.id">ID</span> I011-5046</span></span><span class="when">2021</span></li>
-            <li><span><b data-i18n="c4.n">PMI Agile Certified Practitioner</b><br><span class="sub" data-i18n="c4.s">Course completion</span></span><span class="when">2018</span></li>
-            <li><span><b data-i18n="c5.n">Cisco Certified Network Associate</b><br><span class="sub">Cisco</span></span><span class="when">2012</span></li>
-            <li><span><b data-i18n="c6.n">Secondary school diploma in IT</b><br><span class="sub" data-i18n="c6.s">IT engineering</span></span><span class="when">2010</span></li>
-          </ul>
+        <div class="badge rv" data-d="1">
+          <div class="seal" aria-hidden="true"><span>PSM I</span></div>
+          <b data-i18n="badge2.n">Professional Scrum Master I</b>
+          <span class="sub">Scrum.org · <span data-i18n="c.id">ID</span> 994831</span>
+        </div>
+        <div class="badge rv" data-d="2">
+          <div class="seal" aria-hidden="true"><span>CCNA</span></div>
+          <b data-i18n="badge3.n">Cisco Certified Network Associate</b>
+          <span class="sub">Cisco</span>
         </div>
       </div>
     </div>
@@ -798,78 +631,38 @@ if (!reduced && matchMedia('(pointer:fine)').matches){
    ======================================================================= */
 const IT = {
   "skip":"Vai al contenuto","scroll":"Scorri",
-  "nav.approach":"Approccio","nav.work":"Progetti","nav.path":"Percorso","nav.toolkit":"Competenze","nav.contact":"Contatti",
+  "nav.principles":"Principi","nav.certs":"Certificazioni","nav.contact":"Contatti",
   "hero.place":"Cesano Maderno, Italia",
   "hero.title":"Gestisco progetti che danno al cliente <em>valore che resta</em> — e lascio le cose meglio di come le ho trovate.",
-  "hero.lede":"Da quindici anni trasformo priorità di business in progetti cloud, data e AI per grandi organizzazioni internazionali. <strong>Con la stessa cura di quando ripulisco un sentiero la domenica mattina.</strong>",
+  "hero.note":"Qui sotto trovi il mio CV, <strong>il resto del sito racconta cosa riempie il mio cuore</strong> ed il resto del mio tempo libero.",
   "hero.cta1":"Parliamone","hero.cta2":"Scarica il CV",
 
-  "ledger.title":"In numeri","ledger.sub":"Quello di cui tengo il conto, tutto insieme.",
-  "tag.work":"Lavoro","tag.give":"Comunità",
-  "lg.1":"anni alla guida di progetti IT",
-  "lg.2":"persone nei team di progetto che coordino",
-  "lg.3":"il budget più alto che ho gestito",
+  "ledger.title":"In numeri","ledger.sub":"Quello di cui tengo il conto, fuori dall'ufficio.",
   "lg.4":"di rifiuti raccolti in aree naturali",
   "lg.5":"associazioni in cui faccio volontariato: PMI-NIC e Plasticfree",
   "lg.6":"idea che vale la pena tramandare: il rispetto per le persone e per il pianeta",
-  "cx.1":"Da amministratore di rete a responsabile di programma: gli anni tecnici pesano ancora su ogni stima che firmo.",
-  "cx.2":"Quindici rispondono direttamente a me. Gli altri arrivano da sviluppo, analytics, fornitori e team del cliente.",
-  "cx.3":"Gestito dall'inizio alla fine: previsioni, consuntivi, contratti con i fornitori e le conversazioni di quando un numero si muove.",
-  "cx.4":"Pesati sacco per sacco, nelle giornate di raccolta con Plasticfree. È il dato che arrotondo meno volentieri.",
-  "cx.5":"Una tramanda il mestiere del project management. L'altra raccoglie quello che altri hanno lasciato indietro.",
+  "cx.4":"Togliere il peso dei rifiuti dal mondo è proprio quello che mi fa sentire più leggero, ogni giorno.",
+  "cx.5":"Una tramanda la conoscenza. L'altra raccoglie quello che altri hanno lasciato indietro.",
   "cx.6":"L'unica cosa che vorrei lasciare alle nuove generazioni, prima di qualsiasi metodo o certificazione.",
-  "key.work":"Carriera","key.give":"Comunità",
-  "ledger.note":"Stessa persona, unità di misura diverse.",
 
-  "eyebrow.approach":"Come lavoro",
-  "approach.title":"Quattro principi che non cambiano, in ufficio come lungo un fiume.",
-  "approach.lede":"Il metodo si impara e si certifica. Quello che decide davvero come finisce un progetto, invece, somiglia molto di più al carattere.",
+  "eyebrow.principles":"I miei principi",
+  "principles.title":"Quattro principi che non cambiano, qualunque cosa io stia facendo.",
+  "principles.lede":"Il metodo si impara e si certifica. Quello che decide davvero come vanno a finire le cose, invece, somiglia molto di più al carattere.",
   "p1.h":"Prima le persone, poi il piano",
-  "p1.p":"Gestisco quindici persone in modo diretto e coordino team che arrivano a cinquanta e oltre. Un piano vale quanto le persone che ci credono: per questo dedico gran parte del mio tempo a far crescere il team, rimuovere ostacoli e disinnescare i conflitti quando sono ancora piccoli.",
-  "p1.t":"Chi si fida di te ti segnala il problema mentre è ancora gestibile.",
+  "p1.p":"Un piano vale esattamente quanto le persone che ci credono. Per questo la maggior parte del mio tempo va nell'ascoltare, rimuovere ostacoli per chi mi sta vicino e disinnescare i conflitti quando sono ancora piccoli.",
   "p2.h":"Misurare quello che conta",
-  "p2.p":"Perimetro, budget, rischi, dipendenze: tenuti sotto controllo alla luce del sole, comunicati con onestà, con escalation effettuata prima che facciano danni. Al vertice arriva il quadro reale, non quello rassicurante.",
-  "p2.t":"È lo stesso istinto che mi fa pesare i sacchi alla fine di una giornata di raccolta.",
+  "p2.p":"Quello che conta davvero si tiene sotto controllo alla luce del sole, se ne parla con onestà, e si segnala prima che diventi un problema serio. Chi mi sta intorno riceve il quadro reale, non quello rassicurante.",
   "p3.h":"Lasciare le cose meglio di come le hai trovate",
-  "p3.p":"Una migrazione deve restituire una piattaforma più sicura e più solida di prima. Un data hub deve lasciare un'azienda capace di fidarsi dei propri numeri. Un progetto non finisce quando va in produzione: finisce quando regge nel tempo.",
-  "p3.t":"È esattamente lo stesso principio che seguo con Plasticfree.",
+  "p3.p":"Qualunque cosa io tocchi — un luogo, una relazione, un impegno — deve restare migliore di come l'ho trovata. Non finisce quando sembra completo: finisce quando regge nel tempo.",
   "p4.h":"Trasmettere quello che si sa",
-  "p4.p":"Faccio volontariato con il PMI Northern Italy Chapter perché il project management è un mestiere che si condivide, non si custodisce. E vorrei che le nuove generazioni crescessero prendendo sul serio le persone tanto quanto l'ambiente.",
-  "p4.t":"Quello che tieni per te si ferma a te.",
+  "p4.p":"Faccio volontariato con il PMI Northern Italy Chapter perché la conoscenza è un mestiere che si condivide, non si custodisce. E vorrei che le nuove generazioni — a partire da mia figlia — crescessero prendendo sul serio le persone tanto quanto l'ambiente.",
 
-  "eyebrow.work":"Progetti selezionati",
-  "work.title":"Tre programmi che hanno cambiato il modo di lavorare di un'azienda.",
-  "f.sector":"Settore","f.team":"Team","f.budget":"Budget",
-  "w1.h":"Procurement Data Hub",
-  "w1.p":"Dall'analisi iniziale al rilascio di una piattaforma dati Azure che mette insieme SAP, Oracle, Microsoft Access e altre fonti. Ha dato a un gruppo energetico una fonte unica e affidabile sul procurement, e con essa una reportistica su cui si potesse davvero decidere. Ho tenuto insieme infrastruttura, sviluppo, analytics e referenti di business per tutta la durata del programma.",
-  "w1.sector":"Energia",
-  "w2.h":"Migrazione da on-premise ad Azure",
-  "w2.p":"Cinquanta server e venti applicazioni portati su Microsoft Azure senza fermare l'attività. Analisi funzionale, architettura di destinazione, sequenza delle attività e gestione dei rischi, con tecnici, architetti e referenti distribuiti su più Paesi tenuti allineati da una governance chiara e da aggiornamenti diretti alla direzione.",
-  "w2.sector":"Eyewear","w2.team":"14 (internazionale)",
-  "w3.h":"EnterCloudSuite",
-  "w3.p":"Realizzazione completa di una piattaforma self-service per la gestione del cloud, facendo lavorare allo stesso ritmo sviluppatori, designer UI/UX e sistemisti. Ho introdotto un modo di lavorare agile e presidiato perimetro, tempi, budget e comunicazione verso la direzione. Il risultato ha ampliato l'offerta dell'azienda e reso i clienti autonomi sulla propria infrastruttura.",
-  "w3.sector":"Servizi cloud","w3.budget":"fino a €1M",
-
-  "eyebrow.path":"Il percorso",
-  "path.title":"Dalle reti da sistemare ai programmi da guidare.",
-  "now":"oggi",
-  "pa1.r":"Project &amp; People Manager, IT &amp; AI",
-  "pa2.r":"Client Project Manager",
-  "pa3.r":"Cloud Delivery Manager &amp; Scrum Master",
-  "pa4.r":"Support Team Manager",
-  "pa5.r":"Network Administrator",
-
-  "eyebrow.toolkit":"Competenze e certificazioni",
-  "t1.dt":"Dati e analytics","t2.dt":"AI e machine learning","t3.dt":"Cloud e piattaforme","t4.dt":"Metodo e strumenti","t5.dt":"Settori","t6.dt":"Lingue",
-  "t5.dd":"Banking · Manifatturiero consumer · Energia e utility · Sanità · Assicurazioni · Media · Farmaceutico · Trasporti · Telecomunicazioni",
-  "t6.dd":"Italiano (madrelingua) · Inglese (B2)",
+  "eyebrow.certs":"Credenziali",
+  "certs.title":"Le certificazioni di cui vado fiero.",
   "c.id":"n.",
-  "c1.n":"Project Management Professional (PMP)",
-  "c2.n":"Professional Scrum Master I",
-  "c3.n":"Microsoft Certified: Azure Fundamentals",
-  "c4.n":"PMI Agile Certified Practitioner","c4.s":"Attestato di frequenza",
-  "c5.n":"Cisco Certified Network Associate",
-  "c6.n":"Diploma di perito informatico","c6.s":"Istituto tecnico industriale",
+  "badge1.n":"Project Management Professional",
+  "badge2.n":"Professional Scrum Master I",
+  "badge3.n":"Cisco Certified Network Associate",
 
   "eyebrow.contact":"Contatti",
   "contact.title":"Un progetto da portare a casa, o una giornata di raccolta da organizzare?",
