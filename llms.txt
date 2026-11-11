@@ -1,10 +1,15 @@
 # Giorgio Rivolta
 
-> Official website of Giorgio Rivolta, PMP-certified Project Manager specialising in Cloud, Data Analytics and Artificial Intelligence.
+> Official website of Giorgio Rivolta, PMP-certified Project Manager specialising in Cloud, Data Analytics and Artificial Intelligence. Based in Cesano Maderno (MB), Italy, working across Milan (Milano), Monza, Seregno and the Brianza area.
 
 ## About
 
 This website contains my professional profile, work experience, certifications, technical expertise and selected projects.
+
+## Location
+
+- Cesano Maderno (MB), Lombardy, Italy
+- Milano, Monza, Seregno, Monza e Brianza
 
 ## Main topics
 
@@ -22,7 +27,8 @@ This website contains my professional profile, work experience, certifications, 
 
 ## Links
 
-- Website: https://giorgio.rivolta.pro/
+- Website (English): https://giorgio.rivolta.pro/
+- Website (Italiano): https://giorgio.rivolta.pro/it/
 - LinkedIn: https://www.linkedin.com/in/giorgiorivolta/
 - GitHub: https://github.com/grivolta
 - CV: https://giorgio.rivolta.pro/cv/CV_GiorgioRivolta.pdf
